@@ -1,0 +1,42 @@
+﻿@model MIS4200AndrewGolik.Models.Flight
+
+@{
+    ViewBag.Title = "Flight Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Flight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.passenger.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.passenger.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.departingAirport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.departingAirport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.flightID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

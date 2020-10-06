@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MIS4200AndrewGolik.Models.Flight>
+
+@{
+    ViewBag.Title = "Flight Index";
+}
+
+<h2>Flight Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.passenger.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.departingAirport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.passenger.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.departingAirport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.flightID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.flightID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.flightID })
+        </td>
+    </tr>
+}
+
+</table>
